@@ -16,27 +16,7 @@ function itemContauner() {
     .join('');}
 
 
-  const lightbox = new SimpleLightbox('.gallery__link', {});
-list.addEventListener('click', onClick);
-
-function onClick(e) {
-  e.preventDefault();
-  if (e.target.nodeName !== 'IMG') {
-    return;
-  }
-  
-  instance.show();
-  document.addEventListener('keydown', closeModal);
-}
-
-function closeModal(event) {
-  if (event.code === 'Escape') {
-    instance.close();
-    document.removeEventListener('keydown', closeModal);
-  }
-}
-
-list.addEventListener('click', onClick);
+  const lightbox = new SimpleLightbox('.gallery__link', {captionsData:"alt", captionDelay:250});
 
 
 console.log(galleryItems);
