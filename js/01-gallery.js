@@ -24,7 +24,7 @@ function onClick(e) {
     return;
   }
   const imageURL = e.target.dataset.source;
-  instance = basicLightbox.create('<img src="${imageURL}" width="800" height="600">');
+  instance = basicLightbox.create(`<img src="${imageURL}" width="800" height="600">`);
 
 
   instance.show();
