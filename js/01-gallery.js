@@ -24,21 +24,27 @@ function onClick(e) {
     return;
   }
   const imageURL = e.target.dataset.source;
-  instance = basicLightbox.create(`<img src="${imageURL}" width="800" height="600">`);
-
-
-  instance.show();
-  document.addEventListener('keydown', closeModal);
-}
-
+  instance = basicLightbox.create(`<img src="${imageURL}" width="800" height="600">`,
+  {
+    onShow:() =>
+    document.removeEventListener('keydown', closeModal),
+    onClose:() =>
+    document.addEventListener('keydown', closeModal),
+})}
 function closeModal(event) {
   if (event.code === 'Escape') {
     instance.close();
     document.removeEventListener('keydown', closeModal);
   }
 }
-
-list.addEventListener('click', onClick);
+  list.addEventListener('click', onClick);
 
 
 console.log(galleryItems);
+
+   
+   
+  
+
+
+
