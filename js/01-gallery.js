@@ -30,7 +30,9 @@ function onClick(e) {
     document.removeEventListener('keydown', closeModal),
     onClose:() =>
     document.addEventListener('keydown', closeModal),
-})}
+})
+instance.show();
+}
 function closeModal(event) {
   if (event.code === 'Escape') {
     instance.close();
